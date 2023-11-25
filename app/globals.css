@@ -1,27 +1,232 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+svg {
+  fill: #ffffff
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  font-style: normal;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  color: #212122;
+  font-family: 'Made Tommy Soft Regular', sans-serif;
 }
+
+.announcement-bar {
+  background-color: #E1C200;
+  color: #212122;
+  margin: 0%;
+  padding: 10px 0px;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.buybtn {
+  background-color: white;
+  border: 1px solid;
+  border-radius: 10px;
+  color:black;
+  font: 1em sans-serif;
+  padding: 10px;
+}
+
+.row {
+  font: 30px !important;
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  /* Adjust as needed */
+  padding: 10px;
+}
+
+.left-nav {
+  height: 30px;
+  align-items: center;
+  /* Distribute available space equally among left and right divisions */
+}
+
+.left-nav a {
+  color: white;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  background-color: #545353;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+}
+
+.dropdown a {
+  display: block;
+  padding: 15px;
+}
+
+.nav-item:hover .dropdown {
+  display: block;
+  animation: fadeIn 0.3s ease-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.nav-item:not(:hover) .dropdown {
+  animation: fadeOut 0.3s ease-out 0.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+li {
+
+  display: inline-block;
+  margin-right: 10px;
+  /* Add spacing between list items, adjust as needed */
+}
+
+nav-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  /* Set the font size, adjust as needed */
+  font-weight: bold;
+  /* Set the font weight, adjust as needed */
+  font-family: 'Made Tommy Soft Regular', sans-serif;
+
+}
+
+nav-menu a:hover {
+  color: #E1C200;
+  text-decoration: underline;
+}
+
+.right-nav {
+  height: 30px;
+  display: inline;
+  align-items: flex-end;
+}
+
+.center-logo {
+  flex: 0;
+  /* Do not grow, maintain its size based on content */
+  margin: 0 20px;
+  /* Add some spacing around the logo, adjust as needed */
+}
+
+.carousel-caption {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bolder;
+  padding-top: 30%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: left;
+  text-shadow: 2px 2px 2px black;
+  /* Add a text shadow for better visibility */
+}
+
+.thb-item-count {
+  justify-content: center;
+  text-align: center;
+  font-size: .625rem;
+  font-weight: 600;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  background: var(--color-header-icons, --color-accent);
+  color: var(--color-header-bg, #fff);
+  top: -8px;
+  right: -12px;
+}
+
+.banner {
+  color: black;
+  font-size: .8125rem;
+}
+
+.semislideshow-container {
+  width: 100vw;
+  overflow: hidden;
+}
+
+.semislides {
+  display: flex;
+  white-space: nowrap;
+  animation: marquee 25s linear infinite;
+  animation-delay: 0; 
+}
+
+
+.semislide {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+  text-align: center;
+}
+
+.semislide-box {
+  width: 25vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.semi-img{
+  width: 150px;
+  height: 150px;
+  border-radius:75px;
+}
+
+.semislide-box{
+  border-radius: 75px 30px 30px 75px;
+}
+
+.semislide-text{
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  justify-content: space-between;
+}
+
+.semislide-text{
+  text-align: right;
+  padding: 20px;
+}
+
+.semislide-textname{
+  font: 25px Qualy, sans-serif;
+}
+
+.semislide-shopnow{
+  font: 15px Qualy, sans-serif;
+  text-decoration: underline;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
